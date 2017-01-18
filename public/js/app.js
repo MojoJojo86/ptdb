@@ -5,7 +5,7 @@
 
     app.controller('patientsController', function($scope, $http) {
 
-      $http.get('/patients')
+      $http.get('/')
         .then(function(response) {
           $scope.patients = response.data;
         });
