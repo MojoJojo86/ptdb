@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="patientsApp">
+<head>
+  <title>Node-Mongo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+  <body ng-controller="patientsController">
+
+    <div class="container">
+
+      <div class="col-sm-6">
+        <form ng-submit="savePatient(patient)">
+          <div class="form-group">
+            <input type="text" placeholder="First Name" ng-model="patient.first_name" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Last Name" ng-model="patient.last_name" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Hospital Number" ng-model="patient.hosp_num" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Consultant" ng-model="patient.consultant" class="form-control"> 
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Treatment Site" ng-model="patient.treat_site" class="form-control"> 
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Treatment Group" ng-model="patient.treat_group" class="form-control"> 
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <div class="col-sm-6">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="patient in patients">
+            <h4>Patient Name: {{patient.first_name + ' ' + patient.last_name}}</h4>
+            <p>Hospital Number: {{patient.hosp_num}}</p>
+            <p>Consultant: {{patient.consultant}}</p>
+            <p>Treatment Site: {{patient.treat_site}}</p>
+            <p>Treatment Group: {{patient.treat_group}}</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
