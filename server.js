@@ -16,11 +16,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cors());
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
-app.get('/', function(req, res) {
-  res.sendFile(__direname + '/index.html')
-});
+//app.get('/', function(req, res) {
+  //res.sendFile(__direname + '/index.html')
+//});
 
 app.use('/api/patients', require('./api/patients/routes/post_patient'));
 app.use('/api/patients', require('./api/patients/routes/get_patients'));
