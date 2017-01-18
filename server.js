@@ -23,16 +23,13 @@ app.use('/api/patients', require('./api/patients/routes/put_patient'));
 app.use('/api/patients', require('./api/patients/routes/delete_patient'));
 
 
-const hostname = 'localhost';
-const port = 3001;
+const PORT = process.env.PORT || 3000;
 
-
-app.listen(port, hostname, () => {
-
+app.listen(PORT, () => {
   mongoose.connect(mongooseUri, dbOptions, (err) => {
     if (err) {
       console.log(err);
     }
-    console.log('Server is now running!');
+    console.log(`Our app is running on port ${ PORT }`);
   });
 });
