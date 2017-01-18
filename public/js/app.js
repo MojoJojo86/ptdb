@@ -5,13 +5,13 @@
 
     app.controller('patientsController', function($scope, $http) {
 
-      $http.get('http://localhost:3001/api/patients')
+      $http.get('/patients')
         .then(function(response) {
           $scope.patients = response.data;
         });
     
       $scope.savePatient = function(patient) {
-        $http.post('http://localhost:3001/api/patients', patient)
+        $http.post('/patients', patient)
           .then(function(response) {
             $scope.patients.push(response.data);
         });
