@@ -5,7 +5,7 @@
 
     app.controller('patientsController', function($scope, $http) {
 
-      $http.get('https://murmuring-ocean-78954.herokuapp.com//api/patients')
+      $http.get('https://murmuring-ocean-78954.herokuapp.com/api/patients')
         .then(function(response) {
           $scope.patients = response.data;
         });
