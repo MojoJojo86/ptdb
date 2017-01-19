@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cors());
 
 app.use(express.static('public'));
+var path = require('path');//Require the nodeJs's path module.
+app.use('/', express.static(path.join(__dirname+'/path/to/node_modules')));//declare as static the node_modules folder so that node can serve the angular.js file inside it
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html')
