@@ -19,7 +19,7 @@ app.use(cors());
 
 
 app.get('/', function(req, res) {
-  res.sendFile(__direname + '/index.html')
+  res.sendFile(__direname + '/public/index.html')
 });
 
 app.use('/api/patients', require('./api/patients/routes/post_patient'));
