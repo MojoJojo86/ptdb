@@ -11,7 +11,7 @@
         });
     
       $scope.savePatient = function(patient) {
-        $http.post('murmuring-ocean-78954.herokuapp.com/api/patients', patient)
+        $http.post('https://murmuring-ocean-78954.herokuapp.com/api/patients', patient)
           .then(function(response) {
             $scope.patients.push(response.data);
         });
