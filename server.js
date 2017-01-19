@@ -18,9 +18,9 @@ app.use(cors());
 
 
 
-//app.get('/', function(req, res) {
- // res.sendFile('public/index.html')
-//});
+app.get('/', function(req, res) {
+  res.sendFile('public/index.html')
+});
 
 app.use('/api/patients', require('./api/patients/routes/post_patient'));
 app.use('/api/patients', require('./api/patients/routes/get_patients'));
